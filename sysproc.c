@@ -89,3 +89,16 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+int
+sys_wcupa(void)
+{
+    return 1871;
+}
+
+int
+sys_readc(void)
+{
+    return 69;
+    //todo
+}
