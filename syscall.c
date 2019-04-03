@@ -105,6 +105,7 @@ extern int sys_write(void);
 extern int sys_uptime(void);
 extern int sys_wcupa(void);
 extern int sys_readc(void);
+extern int callcount;
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -136,6 +137,7 @@ void
 syscall(void)
 {
   int num;
+  callcount++;
   struct proc *curproc = myproc();
 
   num = curproc->tf->eax;

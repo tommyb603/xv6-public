@@ -93,12 +93,11 @@ sys_uptime(void)
 int
 sys_wcupa(void)
 {
-    return 1871;
+  return 1871;
 }
 
 int
 sys_readc(void)
 {
-    return 69;
-    //todo
+  return readc();
 }

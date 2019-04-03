@@ -14,6 +14,7 @@ struct {
 
 static struct proc *initproc;
 
+int callcount = 0;
 int nextpid = 1;
 extern void forkret(void);
 extern void trapret(void);
@@ -494,6 +495,13 @@ kill(int pid)
   }
   release(&ptable.lock);
   return -1;
+}
+
+int
+readc()
+{
+	cprintf("The system has made %d calls\n", callcount);
+	return 22;
 }
 
 //PAGEBREAK: 36
